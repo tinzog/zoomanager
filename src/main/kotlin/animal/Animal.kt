@@ -1,15 +1,17 @@
-package animal
+package main.animal
 
-class Animal(val name: String, val species: String, val age: Int) {
-    companion object {
-        fun fromCsv(csvLine: String): Animal? {
-            val tokens = csvLine.split(",").map { it.trim() }
-            // return if there are not exactly 3 columns corresponding to each property
-            if (tokens.size != 3) return null
-            val (name, species, age) = tokens
-            return Animal(name, species, age.toIntOrNull() ?: return null)
-        }
-    }
+import java.time.LocalDate
+import main.food.Food
+import main.food.FeedingSchedule
+import main.animal.Species
 
-    fun toCsv(): String = "$name,$species,$age"
-}
+
+abstract class Animal(
+    val name: String = "",
+    val dateOfBirth: LocalDate,
+    val species: Species,
+    val acceptedFood: List<Food> = species.defaultAcceptedFood,
+    val requiredAmountPerDay: Int = species.defaultRequiredAmountPerDay,
+    val foodUnit: String,
+    val feedingSchedule: FeedingSchedule
+)

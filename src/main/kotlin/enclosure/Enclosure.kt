@@ -1,6 +1,6 @@
 package enclosure
 
-import animal.Animal
+import main.animal.Animal
 
 class Enclosure {
     val animals = mutableListOf<Animal>()
