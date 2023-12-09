@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Corn",
+    "category": "PLANT",
+    "foodUnit": "PIECE"
+  },
+  {
+    "name": "Meat",
+    "category": "ANIMAL",
+    "foodUnit": "KG"
+  },
+  {
+    "name": "Fish",
+    "category": "ANIMAL",
+    "foodUnit": "KG"
+  },
+  {
+    "name": "Fruit",
+    "category": "PLANT",
+    "foodUnit": "PIECE"
+  }
+]
