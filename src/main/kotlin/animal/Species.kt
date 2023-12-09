@@ -1,13 +1,15 @@
 package main.animal
 
-import main.food.Food
 import main.food.FeedingSchedule
+import main.food.Food
+import kotlinx.serialization.Serializable
 
-class Species(
+@Serializable
+data class Species(
     val genusName: String,
     val speciesName: String,
-    val defaultAcceptedFood: List<Food>,
-    val defaultRequiredAmountPerDay: Int,
+    val defaultAcceptedFood: Food,
+    val defaultRequiredAmountPerDay: Int = 1,
     val defaultFeedingSchedule: FeedingSchedule
 ) {
     override fun toString(): String {
