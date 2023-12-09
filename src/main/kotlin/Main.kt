@@ -5,8 +5,10 @@ import main.zoo.Zoo
 
 fun main() {
     val zoo = Zoo()
-    zoo.restoreFoodList(Importer.importFoodFromJson(zoo))
-    println("Imported food!")
+    zoo.restoreSpeciesList(Importer.importSpeciesFromJson(zoo))
+    println("Imported species!")
+    println("Number of species: ${zoo.speciesList.size}")
     println("Number of foods: ${zoo.foodList.size}")
-
+    // print all foods with uid and name
+    zoo.foodList.forEach { println("${it.category}: ${it.name}") }
 }
