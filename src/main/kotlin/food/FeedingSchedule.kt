@@ -3,12 +3,13 @@ package main.food
 import kotlinx.serialization.Serializable
 
 @Serializable
-class FeedingSchedule(
-    val feedingHours: List<Int> = listOf(8),
-    val food: Food,
-    val foodAmount: Int = 1,
-    val foodUnit: String = "kg"
+public class FeedingSchedule(
+    var feedingHours: List<Int> = listOf(8),
+    var food: Food,
+    var foodAmount: Int = 1,
+    var foodUnit: String = food.foodUnit.toString()
 ) {
+
     override fun toString(): String {
         return "FeedingSchedule: ${feedingHours.size} time(s) a day"
     }

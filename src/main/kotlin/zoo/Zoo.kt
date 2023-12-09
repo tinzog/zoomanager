@@ -24,8 +24,9 @@ class Zoo {
      }
 
     fun addFood(food: Food) {
-        foodList.add(food)
-        println("Added ${food.name} to the zoo.")
+        if (foodList.find { it.name == food.name } == null) {
+            foodList.add(food)
+        }
     }
 
     fun restoreFoodList(foodList: List<Food>) {

@@ -3,6 +3,8 @@ package enclosure
 import main.animal.Animal
 
 class Enclosure {
+
+    val name: String = "Enclosure"
     val animals = mutableListOf<Animal>()
 
     fun addAnimal(animal: Animal) {
@@ -13,5 +15,17 @@ class Enclosure {
     fun removeAnimal(animal: Animal) {
         animals.remove(animal)
         println("Removed ${animal.name} the ${animal.species} from the zoo.")
+    }
+
+    fun getAnimalList(): List<Animal> {
+        return animals
+    }
+
+    fun getAnimalsToString(): String {
+        var animalsString = ""
+        animals.forEach { animal ->
+            animalsString += "${animal.toString()}\n"
+        }
+        return animalsString
     }
 }
