@@ -11,8 +11,8 @@ enum class FoodUnit {
 }
 
 @Serializable
-abstract class Food(val name: String, val category: Category, val foodUnit: FoodUnit = FoodUnit.PIECE) {
-    override fun toString(): String {
-        return name
-    }
-}
+class Food(
+    val name: String,
+    val category: Category,
+    val foodUnit: FoodUnit
+)
