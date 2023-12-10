@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Polar",
+    "enclosureSizeLand": 1000,
+    "enclosureSizeSaltWater": 500,
+    "enclosureSizeFreshWater": 0,
+    "enclosureHeightAir": 0,
+    "capacitySmallLandAnimals": 5,
+    "capacityLargeLandAnimals": 3,
+    "capacitySmallAirAnimals": 0,
+    "capacityLargeAirAnimals": 0,
+    "capacitySmallWaterAnimals": 4,
+    "capacityLargeWaterAnimals": 2,
+    "containsWaterEnclosure": true,
+    "waterType": "SALTWATER"
+  },
+  {
+    "name": "Birds and Reptiles",
+    "enclosureSizeLand": 600,
+    "enclosureSizeSaltWater": 0,
+    "enclosureSizeFreshWater": 0,
+    "enclosureHeightAir": 300,
+    "capacitySmallLandAnimals": 10,
+    "capacityLargeLandAnimals": 2,
+    "capacitySmallAirAnimals": 15,
+    "capacityLargeAirAnimals": 5,
+    "capacitySmallWaterAnimals": 0,
+    "capacityLargeWaterAnimals": 0,
+    "containsWaterEnclosure": false,
+    "waterType": "FRESHWATER"
+  },
+  {
+    "name": "Cats of Prey",
+    "enclosureSizeLand": 1500,
+    "enclosureSizeSaltWater": 0,
+    "enclosureSizeFreshWater": 0,
+    "enclosureHeightAir": 0,
+    "capacitySmallLandAnimals": 8,
+    "capacityLargeLandAnimals": 5,
+    "capacitySmallAirAnimals": 0,
+    "capacityLargeAirAnimals": 0,
+    "capacitySmallWaterAnimals": 0,
+    "capacityLargeWaterAnimals": 0,
+    "containsWaterEnclosure": false,
+    "waterType": "FRESHWATER"
+  }
+]

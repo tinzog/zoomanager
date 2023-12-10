@@ -1,0 +1,273 @@
+[
+  {
+    "genusName": "Panthera",
+    "speciesName": "Leo",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        8,
+        16
+      ],
+      "food": {
+        "name": "Meat",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "2",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Panthera",
+    "speciesName": "Tigris",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        9,
+        17
+      ],
+      "food": {
+        "name": "Meat",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "2",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Ursus",
+    "speciesName": "Maritimus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        10,
+        18
+      ],
+      "food": {
+        "name": "Fish",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "4",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Aptenodytes",
+    "speciesName": "Forsteri",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        11,
+        19
+      ],
+      "food": {
+        "name": "Fish",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "4",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Psittacidae",
+    "speciesName": "Ara",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        12,
+        20
+      ],
+      "food": {
+        "name": "Fruit",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "1",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Alcedinidae",
+    "speciesName": "Alcyon",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        13,
+        21
+      ],
+      "food": {
+        "name": "Fish",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "1",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Cervidae",
+    "speciesName": "Elaphus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        7,
+        14
+      ],
+      "food": {
+        "name": "Vegetables",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "3",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Canidae",
+    "speciesName": "Lupus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        9,
+        17
+      ],
+      "food": {
+        "name": "Meat",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "2",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Phasianidae",
+    "speciesName": "Gallus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        10,
+        16
+      ],
+      "food": {
+        "name": "Corn",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "1",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Hippopotamidae",
+    "speciesName": "Amphibius",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        8,
+        20
+      ],
+      "food": {
+        "name": "Vegetables",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "5",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Equidae",
+    "speciesName": "Caballus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        6,
+        18
+      ],
+      "food": {
+        "name": "Fruit",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "4",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Felidae",
+    "speciesName": "Catus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        8,
+        16
+      ],
+      "food": {
+        "name": "Fish",
+        "category": "ANIMAL",
+        "foodUnit": "KG"
+      },
+      "foodAmount": "1",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Testudines",
+    "speciesName": "Chelonii",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        12
+      ],
+      "food": {
+        "name": "Vegetables",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "2",
+      "foodUnit": "KG"
+    }
+  },
+  {
+    "genusName": "Leporidae",
+    "speciesName": "Cuniculus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        9,
+        15
+      ],
+      "food": {
+        "name": "Nuts",
+        "category": "PLANT",
+        "foodUnit": "G"
+      },
+      "foodAmount": "200",
+      "foodUnit": "G"
+    }
+  },
+  {
+    "genusName": "Sciuridae",
+    "speciesName": "Carolinensis",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        10,
+        14
+      ],
+      "food": {
+        "name": "Seeds",
+        "category": "PLANT",
+        "foodUnit": "G"
+      },
+      "foodAmount": "100",
+      "foodUnit": "G"
+    }
+  },
+  {
+    "genusName": "Bovidae",
+    "speciesName": "Taurus",
+    "defaultFeedingSchedule": {
+      "feedingHours": [
+        11,
+        17
+      ],
+      "food": {
+        "name": "Corn",
+        "category": "PLANT",
+        "foodUnit": "PIECE"
+      },
+      "foodAmount": "5",
+      "foodUnit": "KG"
+    }
+  }
+]

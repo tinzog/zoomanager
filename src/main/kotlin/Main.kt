@@ -5,7 +5,8 @@ import main.zoo.Zoo
 
 fun main() {
     val zoo = Zoo()
-    zoo.restoreSpeciesList(Importer.restoreZooDataFromJson(zoo))
+    val importer = Importer
+    importer.restoreZooDataFromJson(zoo)
 
     while (true) {
         println("1. Show all species")
