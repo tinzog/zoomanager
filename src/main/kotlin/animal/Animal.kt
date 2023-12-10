@@ -20,7 +20,7 @@ abstract class Animal(
     val species: Species,
     private var _dateOfBirth: String = "",
     val feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
-    val gender: Gender = Gender.UNKNOWN,
+    val gender: Gender? = Gender.UNKNOWN,
     val weight: Double? = null
 ) {
     var dateOfBirth: String = _dateOfBirth
