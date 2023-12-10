@@ -14,6 +14,7 @@ enum class Sizegroup {
     SMALL, LARGE, UNKNOWN
 }
 
+
 @Serializable
 abstract class Animal(
     val name: String = "",
@@ -21,7 +22,8 @@ abstract class Animal(
     private var _dateOfBirth: String = "",
     val feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
     val gender: Gender? = Gender.UNKNOWN,
-    val weight: Double? = null
+    val weight: Double? = null,
+    val enclosureName: String = ""
 ) {
     var dateOfBirth: String = _dateOfBirth
         get() = field

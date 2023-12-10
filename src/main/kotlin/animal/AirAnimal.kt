@@ -1,9 +1,11 @@
 package main.animal
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import main.food.FeedingSchedule
 
 @Serializable
+@SerialName("AirAnimal")
 class AirAnimal : Animal, Flyable {
 
     var requiredEnclosureHeight: Int
@@ -15,8 +17,9 @@ class AirAnimal : Animal, Flyable {
         feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
         gender: Gender? = Gender.UNKNOWN,
         weight: Double? = null,
+        enclosureName: String = "",
         requiredEnclosureHeight: Int = 0
-    ) : super(name, species, _dateOfBirth, feedingSchedule, gender, weight) {
+    ) : super(name, species, _dateOfBirth, feedingSchedule, gender, weight, enclosureName) {
         this.requiredEnclosureHeight = requiredEnclosureHeight
     }
 
