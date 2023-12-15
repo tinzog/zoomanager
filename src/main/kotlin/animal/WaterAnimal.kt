@@ -1,34 +1,38 @@
 package main.animal
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-import main.food.FeedingSchedule
+import main.zoo.Zoo
+import java.time.LocalDate
 
 enum class WaterType {
     FRESHWATER,
     SALTWATER
 }
-@Serializable
-@SerialName("WaterAnimal")
 class WaterAnimal: Animal, Swimmable {
-    var preferredWaterType: WaterType
-    var requiredPoolSize: Int = 0
+
+    var preferredWaterType: WaterType = WaterType.FRESHWATER
+    var requiredWaterDepth: Int = 1
 
     constructor(
-        name: String = "",
-        species: Species,
-        _dateOfBirth: String = "",
-        feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
-        gender: Gender? = Gender.UNKNOWN,
-        weight: Double? = null,
-        enclosureName: String = "",
-        waterType: WaterType? = WaterType.FRESHWATER,
-        preferredPoolSize: Int = 0
-    ) : super(name, species, _dateOfBirth, feedingSchedule, gender, weight, enclosureName) {
-
-        // default is freshwater
-        this.preferredWaterType = waterType ?: WaterType.FRESHWATER
-        this.requiredPoolSize = preferredPoolSize
+        speciesName: String,
+        enclosureName: String,
+        zoo: Zoo,
+        name: String? = null,
+        dateOfBirth: LocalDate = LocalDate.now(),
+        gender: Gender = Gender.UNKNOWN,
+        weight: Int = 0,
+        requiredEnclosureSize: Int = 0,
+        preferredWaterType: WaterType = WaterType.FRESHWATER,
+    ) : super(
+        speciesName = speciesName,
+        enclosureName = enclosureName,
+        zoo = zoo,
+        name = name,
+        dateOfBirth = dateOfBirth,
+        gender = gender,
+        weight = weight
+    ) {
+        this.requiredWaterDepth = requiredEnclosureSize
+        this.preferredWaterType = preferredWaterType
     }
 
     override fun getWaterType(): String {
@@ -36,10 +40,9 @@ class WaterAnimal: Animal, Swimmable {
     }
 
     override fun getMinimumPoolSize(): Int {
-        if (this.sizeGroup == Sizegroup.SMALL) {
-            return 100
-        } else {
-            return 1000
+        if (this.requiredWaterDepth == 0) {
+            return if (this.sizeGroup == Sizegroup.SMALL) 2 else 10
         }
+        return this.requiredWaterDepth * 5
     }
 }

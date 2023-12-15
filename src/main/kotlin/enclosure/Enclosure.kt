@@ -1,12 +1,8 @@
 package enclosure
 
 import main.animal.*
-import kotlinx.serialization.Serializable
 
-@Serializable
-class Enclosure {
-
-    val name: String = "Enclosure"
+class Enclosure (val name: String) {
     val landAnimals = mutableListOf<LandAnimal>()
     val airAnimals = mutableListOf<Animal>()
     val waterAnimals = mutableListOf<Animal>()

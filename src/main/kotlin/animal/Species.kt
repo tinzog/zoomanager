@@ -1,11 +1,9 @@
 package main.animal
 
-import kotlinx.serialization.Serializable
 import main.food.FeedingSchedule
 import main.food.Food
 
-@Serializable
-public class Species(
+data class Species(
     var genusName: String,
     var speciesName: String,
     var defaultFeedingSchedule: FeedingSchedule

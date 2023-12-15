@@ -1,10 +1,9 @@
 package main.animal
 
-import kotlinx.serialization.Serializable
+import enclosure.Enclosure
 import main.food.FeedingSchedule
+import main.zoo.Zoo
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeParseException
 
 enum class Gender {
     MALE, FEMALE, UNKNOWN
@@ -14,49 +13,44 @@ enum class Sizegroup {
     SMALL, LARGE, UNKNOWN
 }
 
-
-@Serializable
-abstract class Animal(
-    val name: String = "",
+abstract class Animal internal constructor(
+    val name: String? = null,
     val species: Species,
-    private var _dateOfBirth: String = "",
-    val feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
-    val gender: Gender? = Gender.UNKNOWN,
-    val weight: Double? = null,
-    val enclosureName: String = ""
+    val dateOfBirth: LocalDate = LocalDate.now(),
+    val gender: Gender = Gender.UNKNOWN,
+    val weight: Int = 0,
+    private var enclosure: Enclosure,
+    var customFeedingSchedule: FeedingSchedule = species.defaultFeedingSchedule
 ) {
-    var dateOfBirth: String = _dateOfBirth
-        get() = field
-        private set(value) {
-            if (!isValidDate(value)) {
-                throw IllegalArgumentException("Invalid date format. Expected format: d.M.yyyy")
-            }
-            field = value
-        }
-
-    init {
-        this.dateOfBirth = _dateOfBirth  // Validate the date format on initialization
+    // Secondary constructor
+    constructor(
+        speciesName: String,
+        enclosureName: String,
+        zoo: Zoo,
+        name: String? = null,
+        dateOfBirth: LocalDate = LocalDate.now(),
+        gender: Gender = Gender.UNKNOWN,
+        weight: Int = 0
+    ) : this(
+        name = name,
+        species = zoo.getSpeciesByName(speciesName) ?: throw IllegalArgumentException("Species $speciesName does not exist. Please create the species first."),
+        dateOfBirth = dateOfBirth,
+        gender = gender,
+        weight = weight,
+        enclosure = zoo.getEnclosureByName(enclosureName) ?: throw IllegalArgumentException("Enclosure $enclosureName does not exist. Please create the enclosure first.")
+    )
+    fun setCustomFeedingSchedule(feedingSchedule: FeedingSchedule) {
+        this.customFeedingSchedule = feedingSchedule
     }
-
-    private fun isValidDate(dateStr: String): Boolean {
-        return try {
-            LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("d.M.yyyy"))
-            true
-        } catch (e: DateTimeParseException) {
-            false
-        }
-    }
-
     fun getAge(): Int {
-        val birthDate = LocalDate.parse(dateOfBirth, DateTimeFormatter.ofPattern("d.M.yyyy"))
         val today = LocalDate.now()
-        return today.year - birthDate.year - if (today.dayOfYear < birthDate.dayOfYear) 1 else 0
+        return today.year - dateOfBirth.year - if (today.dayOfYear < dateOfBirth.dayOfYear) 1 else 0
     }
 
     val sizeGroup: Sizegroup
-        get() = weight?.let { if (it < 10) Sizegroup.SMALL else Sizegroup.LARGE } ?: Sizegroup.UNKNOWN
+        get() = if (weight < 10) Sizegroup.SMALL else Sizegroup.LARGE
 
     override fun toString(): String {
-        return "Name: $name, Species: ${species.toString()}, Age: ${getAge()}, Gender: $gender, Size: $sizeGroup"
+        return "Name: $name, Species: ${species.name}, Age: ${getAge()}, Gender: $gender, Size: $sizeGroup"
     }
 }

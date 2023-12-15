@@ -1,33 +1,38 @@
 package main.animal
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-import main.food.FeedingSchedule
+import main.zoo.Zoo
+import java.time.LocalDate
 
-@Serializable
-@SerialName("LandAnimal")
 class LandAnimal : Animal, Walkable {
 
-    var requiredEnclosureSize: Int
-    // secondary constructor
+    var requiredEnclosureWidth: Int
+
     constructor(
-        name: String = "",
-        species: Species,
-        _dateOfBirth: String = "",
-        feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
-        gender: Gender? = Gender.UNKNOWN,
-        weight: Double? = null,
-        enclosureName: String = "",
-        enclosureSize: Int = 0
-    ) : super(name, species, _dateOfBirth, feedingSchedule, gender, weight,enclosureName) {
-        this.requiredEnclosureSize = enclosureSize
+        speciesName: String,
+        enclosureName: String,
+        zoo: Zoo,
+        name: String? = null,
+        dateOfBirth: LocalDate = LocalDate.now(),
+        gender: Gender = Gender.UNKNOWN,
+        weight: Int = 0,
+        requiredEnclosureWidth: Int = 0
+    ) : super(
+        speciesName = speciesName,
+        enclosureName = enclosureName,
+        zoo = zoo,
+        name = name,
+        dateOfBirth = dateOfBirth,
+        gender = gender,
+        weight = weight
+    ) {
+        this.requiredEnclosureWidth = requiredEnclosureWidth
     }
 
     override fun getMinimumEnclosureSize(): Int {
-        if (this.requiredEnclosureSize == 0) {
-            // if sizeGroup is SMALL, return 10, else return 100
-            return if (this.sizeGroup == Sizegroup.SMALL) 100 else 1000
+        if (this.requiredEnclosureWidth == 0) {
+            return if (this.sizeGroup == Sizegroup.SMALL) 10 else 100
         }
-        return this.requiredEnclosureSize
+        // area
+        return this.requiredEnclosureWidth * this.requiredEnclosureWidth
     }
 }

@@ -1,31 +1,35 @@
 package main.animal
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-import main.food.FeedingSchedule
+import main.zoo.Zoo
+import java.time.LocalDate
 
-@Serializable
-@SerialName("AirAnimal")
 class AirAnimal : Animal, Flyable {
 
     var requiredEnclosureHeight: Int
-    // secondary constructor
+
     constructor(
-        name: String = "",
-        species: Species,
-        _dateOfBirth: String = "",
-        feedingSchedule: FeedingSchedule = species.defaultFeedingSchedule,
-        gender: Gender? = Gender.UNKNOWN,
-        weight: Double? = null,
-        enclosureName: String = "",
-        requiredEnclosureHeight: Int = 0
-    ) : super(name, species, _dateOfBirth, feedingSchedule, gender, weight, enclosureName) {
+        speciesName: String,
+        enclosureName: String,
+        zoo: Zoo,
+        name: String? = null,
+        dateOfBirth: LocalDate = LocalDate.now(),
+        gender: Gender = Gender.UNKNOWN,
+        weight: Int = 0,
+        requiredEnclosureHeight: Int = 0,
+    ) : super(
+        speciesName = speciesName,
+        enclosureName = enclosureName,
+        zoo = zoo,
+        name = name,
+        dateOfBirth = dateOfBirth,
+        gender = gender,
+        weight = weight
+    ) {
         this.requiredEnclosureHeight = requiredEnclosureHeight
     }
 
     override fun getMinimunEnclosureHeight(): Int {
         if (this.requiredEnclosureHeight == 0) {
-            // if sizeGroup is SMALL, return 10, else return 100
             return if (this.sizeGroup == Sizegroup.SMALL) 5 else 10
         }
         return this.requiredEnclosureHeight
