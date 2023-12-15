@@ -18,6 +18,10 @@ class Zoo {
         return enclosureList.find { it.name == name }
     }
 
+    fun getSpeciesByName(name: String): Species? {
+        return speciesList.find { it.name == name }
+    }
+
     fun listAllEnclosures() {
         println("Enclosures:")
         enclosureList.forEach {

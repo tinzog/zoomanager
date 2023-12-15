@@ -1,12 +1,12 @@
 package main
 
-import main.import.Importer
 import main.zoo.Zoo
+import main.zoo.ZooCreator
 
 fun main() {
     val zoo = Zoo()
-    val importer = Importer
-    importer.restoreZooDataFromJson(zoo)
+    val setup = ZooCreator
+    setup.createZoo()
 
     while (true) {
         println("1. Show all species")
