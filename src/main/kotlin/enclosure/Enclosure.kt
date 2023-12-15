@@ -6,18 +6,18 @@ class Enclosure (val name: String) {
     val landAnimals = mutableListOf<LandAnimal>()
     val airAnimals = mutableListOf<Animal>()
     val waterAnimals = mutableListOf<Animal>()
-    val enclosureSizeLand = 0
-    val enclosureSizeSaltWater = 0
-    val enclosureSizeFreshWater = 0
-    val enclosureHeightAir = 0
-    val capacitySmallLandAnimals = 0
-    val capacityLargeLandAnimals = 0
-    val capacitySmallAirAnimals = 0
-    val capacityLargeAirAnimals = 0
-    val capacitySmallWaterAnimals = 0
-    val capacityLargeWaterAnimals = 0
-    val containsWaterEnclosure = false
-    val waterType = WaterType.FRESHWATER
+    var enclosureSizeLand = 0
+    var enclosureSizeSaltWater = 0
+    var enclosureSizeFreshWater = 0
+    var enclosureHeightAir = 0
+    var capacitySmallLandAnimals = 0
+    var capacityLargeLandAnimals = 0
+    var capacitySmallAirAnimals = 0
+    var capacityLargeAirAnimals = 0
+    var capacitySmallWaterAnimals = 0
+    var capacityLargeWaterAnimals = 0
+    var containsWaterEnclosure = false
+    var waterType = WaterType.FRESHWATER
 
     fun addAnimal(animal: Animal) {
         // if LandAnimal is added, add to landAnimals
@@ -72,10 +72,6 @@ class Enclosure (val name: String) {
         largeAnimals.addAll(airAnimals.filter { it.sizeGroup == Sizegroup.LARGE })
         largeAnimals.addAll(waterAnimals.filter { it.sizeGroup == Sizegroup.LARGE })
         return largeAnimals
-    }
-
-    fun getNamesOfNamedAnimals(): List<String> {
-        return getAllAnimals().filter { it.name != "" }.map { it.name }
     }
 
     /**
